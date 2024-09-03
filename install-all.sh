@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the directory containing your scripts
-SCRIPT_DIR="$(dirname "$0")"
+SCRIPT_DIR="$(dirname "$0")/scripts"
 
 # Install fonts
 echo "Installing fonts..."
