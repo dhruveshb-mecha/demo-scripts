@@ -30,9 +30,7 @@ This repository contains a master installation script (`install-all.sh`) and add
 
 2. Install Docker:
     ```bash
-    sudo bash scripts/install-docker.sh
-   
-   
+    sudo bash scripts/install-docker.sh 
    
    
    
