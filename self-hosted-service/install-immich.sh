@@ -15,11 +15,11 @@ mkdir -p "$TARGET_DIR"
 # Navigate to the directory
 cd "$TARGET_DIR" || exit
 
-# Download the docker-compose.yml file
-wget -O docker-compose.yml https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+# Download the docker-compose.yml file using curl
+curl -L -o docker-compose.yml https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
 
-# Download the .env file and rename it
-wget -O .env https://github.com/immich-app/immich/releases/latest/download/example.env
+# Download the .env file and rename it using curl
+curl -L -o .env https://github.com/immich-app/immich/releases/latest/download/example.env
 
 # Print message to edit the .env file
 echo "Please edit the .env file in $TARGET_DIR to configure your custom settings."
