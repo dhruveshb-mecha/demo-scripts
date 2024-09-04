@@ -37,3 +37,7 @@ This repository contains a master installation script (`install-all.sh`) and add
 * **Immich**: [http://localhost:2283](http://localhost:2283)
 * **Nextcloud**: [http://localhost:8080](http://localhost:8080)
 * **Jellyfin**: [http://localhost:8096](http://localhost:8096)
+
+
+## GAME ON! 🎮
+* **Doom**: [https://www.makeuseof.com/tag/run-doom-raspberry-pi/] (https://www.makeuseof.com/tag/run-doom-raspberry-pi/)
