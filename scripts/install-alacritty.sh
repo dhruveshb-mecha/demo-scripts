@@ -49,7 +49,9 @@ colors:
     cyan: "#95E6CB"
     white: "#FFFFFF"
 
-
+# Shell
+shell:
+  program: /bin/zsh
 
 # Window settings
 decorations: none

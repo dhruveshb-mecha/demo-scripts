@@ -4,6 +4,12 @@
 
 This repository contains a master installation script (`install-all.sh`) and additional scripts for installing various tools.
 
+## Make all scripts executable
+
+```bash
+find /home/user/scripts -type f -name "*.sh" -exec chmod +x {} \;
+```
+
 ## Installation Steps
 
 1. **Open Terminal** and navigate to the repository directory:
