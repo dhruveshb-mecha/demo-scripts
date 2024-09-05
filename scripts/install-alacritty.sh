@@ -6,22 +6,36 @@ sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt-get update
 sudo apt-get install -y alacritty
 
-# this works on newer versions of alacritty that support the new TOML format
+# Check if Alacritty was installed successfully
+if command -v alacritty >/dev/null 2>&1; then
+    echo "Alacritty installed successfully!"
+else
+    echo "Error: Alacritty installation failed."
+    exit 1
+fi
 
-: '
+# Check if Space Mono font is installed
+echo "Checking for Space Mono font..."
+if fc-list | grep -i "Space Mono" >/dev/null 2>&1; then
+    echo "Space Mono font is already installed."
+else
+    echo "Space Mono font not found. Installing..."
+    sudo apt-get install -y fonts-firacode  # Alternative: FiraCode (widely used monospace font)
+    
+    # Optionally, you can download and install Space Mono manually
+    wget https://github.com/googlefonts/SpaceMono/raw/main/fonts/ttf/SpaceMono-Regular.ttf -O /tmp/SpaceMono-Regular.ttf
+    mkdir -p ~/.local/share/fonts
+    mv /tmp/SpaceMono-Regular.ttf ~/.local/share/fonts/
+    fc-cache -fv
+    echo "Space Mono font installed."
+fi
 
-# Clone the Alacritty theme repository
-echo "Cloning Alacritty theme repository..."
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-
-# Set up Alacritty configuration to import the desired theme
-echo "Configuring Alacritty with the ayu_dark theme..."
-
-'
-
+# Create the Alacritty config directory
+echo "Creating Alacritty configuration directory..."
 mkdir -p ~/.config/alacritty
 
+# Create the Alacritty config file with ayu_dark theme
+echo "Creating Alacritty configuration file..."
 cat << 'EOF' > ~/.config/alacritty/alacritty.yml
 # Alacritty Configuration
 
@@ -66,5 +80,12 @@ font:
     style: "Regular"
 EOF
 
-echo "Alacritty installation and theme configuration complete."
+# Verify that the configuration file was created
+if [ -f ~/.config/alacritty/alacritty.yml ]; then
+    echo "Alacritty configuration file created successfully!"
+else
+    echo "Error: Failed to create Alacritty configuration file."
+    exit 1
+fi
 
+echo "Alacritty installation and theme configuration complete."
