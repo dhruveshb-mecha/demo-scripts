@@ -2,7 +2,7 @@
 
 # Update and upgrade the system
 echo "Updating the system..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 # Download and run the Jellyfin installation script
 echo "Installing Jellyfin Media Server..."

@@ -2,7 +2,7 @@
 
 # Update the system
 echo "Updating the system..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 # Install Chocolate Doom
 echo "Installing Chocolate Doom..."
