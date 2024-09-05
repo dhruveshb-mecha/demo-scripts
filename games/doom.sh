@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Update the system
-echo "Updating the system..."
-sudo apt update
-
 # Install Chocolate Doom
 echo "Installing Chocolate Doom..."
 sudo apt install chocolate-doom -y
